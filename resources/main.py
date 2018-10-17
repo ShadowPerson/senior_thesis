@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import getpass
 from Crypto import Random
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256, MD5
@@ -121,7 +122,7 @@ def main():
         print("The file system is currently decrypted. Continue to encrypt.")
         encrypted = False
 
-    password = input("Enter password:\n")
+    password = getpass.getpass("Enter password: ")
     if password_is_correct(password):
         key = get_sha(password)
 
